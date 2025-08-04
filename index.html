@@ -128,14 +128,8 @@
         <h3 class="hero-text-right">
           it’s not quiet here. You just haven’t tuned in yet
         </h3>
-        <div class="hero-waves">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
         <figure class="hero-someone">
-          <img src="/images/someone.webp" alt="" />
+          <canvas id="canvas" width="500" height="500"></canvas>
         </figure>
         <figure class="hero-audio-card">
           <img src="/images/audio-card.webp" alt="" />
@@ -481,7 +475,7 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js"></script>
     <script>
@@ -509,10 +503,23 @@
           type: "x",
           bounds: ".footer",
           inertia: true,
-          throwResistance: 0.5,
-          dragResistance: 0.5,
+          throwResistance: 0,
+          dragResistance: 0,
           liveSnap: 10,
           snap: 10,
+        });
+
+        const r = new rive.Rive({
+          src: "/animations/roy_animation.riv",
+          // OR the path to a discoverable and public Rive asset
+          // src: '/public/example.riv',
+          canvas: document.getElementById("canvas"),
+          autoplay: true,
+          artboard: "Artboard 2", // Optional. If not supplied the default is selected
+          stateMachines: "State Machine 1",
+          onLoad: () => {
+            r.resizeDrawingSurfaceToCanvas();
+          },
         });
       });
     </script>
