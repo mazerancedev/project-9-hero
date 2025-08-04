@@ -162,6 +162,7 @@ canvas {
 .footer-station {
   width: 4rem;
   color: #fff;
+  z-index: 10;
   text-align: center;
   font-family: "Rance Display";
   font-size: 1.6rem;
@@ -170,29 +171,90 @@ canvas {
   line-height: 100%;
   letter-spacing: -0.08rem;
   position: absolute;
-  left: 50%;
+  left: 65%;
   transform: translateX(-50%);
-  top: 8rem;
+  top: 5rem;
   pointer-events: none;
   font-variant-numeric: tabular-nums;
 }
 
 .footer-wave {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.8rem;
   align-items: center;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 2.4rem 6rem 6rem;
+  padding: 1.6rem 6rem 6rem;
   span {
-    width: 0.1rem;
-    height: 1.3rem;
+    width: 0.07rem;
+    height: 1rem;
     background-color: #e6e6e6;
     opacity: 0.6;
   }
   span:nth-of-type(5n) {
-    height: 3.5rem;
-    opacity: 0.7;
+    height: 2rem;
+    opacity: 0.75;
+    margin: 0 0.6rem;
   }
+}
+
+.footer-wave-left {
+  background: linear-gradient(
+    to right,
+    hsl(0, 0%, 0%) 0%,
+    hsla(0, 0%, 0%, 0.987) 6.1%,
+    hsla(0, 0%, 0%, 0.951) 12.8%,
+    hsla(0, 0%, 0%, 0.896) 20%,
+    hsla(0, 0%, 0%, 0.825) 27.5%,
+    hsla(0, 0%, 0%, 0.741) 35.3%,
+    hsla(0, 0%, 0%, 0.648) 43.1%,
+    hsla(0, 0%, 0%, 0.55) 51%,
+    hsla(0, 0%, 0%, 0.45) 58.7%,
+    hsla(0, 0%, 0%, 0.352) 66.2%,
+    hsla(0, 0%, 0%, 0.259) 73.4%,
+    hsla(0, 0%, 0%, 0.175) 80.1%,
+    hsla(0, 0%, 0%, 0.104) 86.2%,
+    hsla(0, 0%, 0%, 0.049) 91.7%,
+    hsla(0, 0%, 0%, 0.013) 96.3%,
+    hsla(0, 0%, 0%, 0) 100%
+  );
+  position: absolute;
+  height: 100%;
+  width: 55%;
+  transform: scaleX(2);
+  transform-origin: left;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 1000000;
+}
+
+.footer-wave-right {
+  background: linear-gradient(
+    to left,
+    hsl(0, 0%, 0%) 0%,
+    hsla(0, 0%, 0%, 0.987) 6.1%,
+    hsla(0, 0%, 0%, 0.951) 12.8%,
+    hsla(0, 0%, 0%, 0.896) 20%,
+    hsla(0, 0%, 0%, 0.825) 27.5%,
+    hsla(0, 0%, 0%, 0.741) 35.3%,
+    hsla(0, 0%, 0%, 0.648) 43.1%,
+    hsla(0, 0%, 0%, 0.55) 51%,
+    hsla(0, 0%, 0%, 0.45) 58.7%,
+    hsla(0, 0%, 0%, 0.352) 66.2%,
+    hsla(0, 0%, 0%, 0.259) 73.4%,
+    hsla(0, 0%, 0%, 0.175) 80.1%,
+    hsla(0, 0%, 0%, 0.104) 86.2%,
+    hsla(0, 0%, 0%, 0.049) 91.7%,
+    hsla(0, 0%, 0%, 0.013) 96.3%,
+    hsla(0, 0%, 0%, 0) 100%
+  );
+  position: absolute;
+  height: 100%;
+  width: 25%;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 1000000;
 }
