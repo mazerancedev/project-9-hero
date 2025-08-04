@@ -19,6 +19,17 @@ html {
   overflow: hidden;
 }
 
+@media (max-width: 600px) {
+  html {
+    font-size: calc(100vw / 404 * 10);
+    overflow: hidden;
+  }
+  body {
+    overflow: hidden;
+    width: 100vw;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -40,31 +51,65 @@ canvas {
 
 .hero-text-left {
   color: #fff;
-  text-align: center;
   font-family: "Rance Display";
-  font-size: 2rem;
+  font-size: 3.2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  letter-spacing: -0.2rem;
+  letter-spacing: -0.23rem;
   position: absolute;
-  top: 30rem;
-  left: 15.3rem;
-  width: 23.3rem;
+  top: 37rem;
+  left: 6rem;
+  width: 57rem;
+
+  span {
+    display: inline-block;
+    color: #ff0b0b;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-text-left {
+    top: 14.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 29rem;
+    font-size: 2.4rem;
+    line-height: 120%;
+    letter-spacing: -0.24rem;
+    text-align: center;
+
+    span {
+      display: block;
+    }
+  }
 }
 
 .hero-text-right {
   color: #fff;
   font-family: "Rance Display";
-  font-size: 4.8rem;
+  font-size: 3.2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  letter-spacing: -0.48rem;
+  letter-spacing: -0.32rem;
   position: absolute;
-  right: 31.1rem;
-  bottom: 16.1rem;
-  width: 25.6rem;
+  right: 6rem;
+  bottom: 17rem;
+  width: 35.6rem;
+  text-align: right;
+}
+@media (max-width: 600px) {
+  .hero-text-right {
+    font-size: 2.4rem;
+    letter-spacing: -0.24rem;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 2.4rem;
+    width: 27.9rem;
+    text-align: center;
+  }
 }
 @keyframes wave {
   0% {
@@ -94,25 +139,44 @@ canvas {
   position: absolute;
   left: 50.75%;
   transform: translateX(-50%) scale(0);
-  top: -16rem;
+  top: -12rem;
   animation: wave 2s linear infinite;
   border: 5.3rem solid rgba(162, 233, 233, 0.39);
   border-radius: 50%;
   filter: blur(4.0900001525878906rem);
   z-index: 1;
 }
+@media (max-width: 600px) {
+  .hero-waves span {
+    width: 16.01rem;
+    height: 16.01rem;
+    top: 26rem;
+    border: 3.2rem solid rgba(162, 233, 233, 0.39);
+    filter: blur(1.6rem);
+  }
+}
 
 .hero-someone {
   width: 100vw;
   height: 56.25vw;
   left: 0;
-  top: 0%;
-  /*transform: translateY(-50%);*/
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+@media (max-width: 600px) {
+  .hero-someone span {
+    width: 30rem;
+    height: auto;
+    top: 31.1rem;
+    left: 0%;
+  }
 }
 
 .hero-audio-card {
   position: absolute;
-  top: 48rem;
+  top: 48.8rem;
   left: 3.9rem;
   width: 46rem;
   height: auto;
@@ -120,11 +184,22 @@ canvas {
   padding: 3rem 14.1rem 3.4rem 14.3rem;
 }
 
+@media (max-width: 600px) {
+  .hero-audio-card {
+    width: 4.5rem;
+    height: auto;
+    top: 28.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.4rem;
+  }
+}
+
 .hero-details {
   position: absolute;
   bottom: 14.2rem;
   left: 6rem;
-  width: 45.9rem;
+  width: 41.9rem;
   height: auto;
 
   h2 {
@@ -141,12 +216,40 @@ canvas {
     align-self: stretch;
     color: #fff;
     font-family: "Rancer Body";
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 100%;
-    letter-spacing: -0.1rem;
+    line-height: 120%;
+    letter-spacing: -0.086rem;
     margin-top: 8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-details {
+    bottom: 8.4rem;
+    left: 4.3rem;
+    width: 31.8rem;
+    justify-content: center;
+
+    h2 {
+      font-size: 1.4rem;
+      line-height: 100%;
+      letter-spacing: -0.1rem;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    p {
+      font-size: 1.6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.064rem;
+      margin: 1.2rem auto 0;
+      width: 28rem;
+      text-align: center;
+    }
   }
 }
 
@@ -157,6 +260,15 @@ canvas {
   border-top: 0.1rem solid #e6e6e6;
   left: 0;
   right: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    bottom: 22rem;
+    height: 8.2rem;
+    border-top: 0.1rem solid #e6e6e6;
+  }
 }
 
 .footer-station {
@@ -171,11 +283,23 @@ canvas {
   line-height: 100%;
   letter-spacing: -0.08rem;
   position: absolute;
-  left: 65%;
+  left: 50%;
   transform: translateX(-50%);
   top: 5rem;
   pointer-events: none;
   font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .footer-station {
+    font-size: 2.4rem;
+  }
+
+  .footer-wave-left,
+  .footer-wave-right {
+    opacity: 0.7;
+    width: 30% !important;
+  }
 }
 
 .footer-wave {
@@ -221,8 +345,7 @@ canvas {
   );
   position: absolute;
   height: 100%;
-  width: 55%;
-  transform: scaleX(2);
+  width: 65%;
   transform-origin: left;
   left: 0;
   top: 0;
@@ -252,7 +375,7 @@ canvas {
   );
   position: absolute;
   height: 100%;
-  width: 25%;
+  width: 65%;
   right: 0;
   top: 0;
   pointer-events: none;

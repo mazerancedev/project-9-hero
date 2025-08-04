@@ -60,8 +60,9 @@
       ></audio>
       <div class="hero">
         <h3 class="hero-text-left">
-          A broken channel hums beneath the fold.<br />Move carefully -
-          <br />some signals claw back.
+          A broken channel hums beneath the fold.<br />
+          <span>Move carefully -</span>
+          some signals claw back.
         </h3>
         <h3 class="hero-text-right">
           it’s not quiet here. You just haven’t tuned in yet
@@ -435,19 +436,14 @@
             return;
           }
           x = y[0].x;
-          fm.innerText =
-            100 - gsap.utils.mapRange(width, 0, 200, 50, y[0].x).toFixed(1);
-          if (
-            100 - gsap.utils.mapRange(width, 0, 200, 50, y[0].x).toFixed(1) <
-            92
-          ) {
+          const num = 100 - gsap.utils.mapRange(width, 0, 230, 80, y[0].x);
+
+          fm.innerText = num.toFixed(Math.max(0, 1));
+          if (num.toFixed(1) < 92) {
             audios[0].play();
             audios[1].pause();
             audios[2].pause();
-          } else if (
-            100 - gsap.utils.mapRange(width, 0, 200, 50, y[0].x).toFixed(1) >
-            92
-          ) {
+          } else if (num.toFixed(1) > 92) {
             audios[0].pause();
             audios[1].pause();
             audios[2].play();
@@ -456,9 +452,6 @@
             audios[1].play();
             audios[2].pause();
           }
-          console.log(
-            100 - gsap.utils.mapRange(width, 0, 200, 50, y[0].x).toFixed(1),
-          );
           requestAnimationFrame(animate);
         }
         requestAnimationFrame(animate);
