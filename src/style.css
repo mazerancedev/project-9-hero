@@ -186,7 +186,7 @@ canvas {
 
 @media (max-width: 600px) {
   .hero-someone {
-    top: 51.1rem;
+    top: 48.1rem;
     transform: translateY(-50%) scale(1.3);
   }
 }
