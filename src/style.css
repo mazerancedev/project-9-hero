@@ -169,7 +169,7 @@ canvas {
   .hero-waves span {
     width: 16.01rem;
     height: 16.01rem;
-    top: 36rem;
+    top: 30rem;
     border: 3.2rem solid rgba(162, 233, 233, 0.39);
     filter: blur(1.6rem);
   }
@@ -187,6 +187,7 @@ canvas {
 @media (max-width: 600px) {
   .hero-someone {
     top: 51.1rem;
+    transform: translateY(-50%) scale(1.3);
   }
 }
 
