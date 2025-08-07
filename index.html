@@ -60,15 +60,17 @@
       ></audio>
       <div class="hero">
         <h3 class="hero-text-left">
-          <div>A broken channel hums beneath the fold.</div>
-          <p data-desktop>
+          <div data-fade-in>A broken channel hums beneath the fold.</div>
+          <p data-fade-in>
             There’s something beneath the interface. Not a voice, exactly.
-            Something trying to remember how to be one.  Keep going. Not
-            everything repeats for your benefit. 
+            Something trying to remember how to be one. Keep going. Not
+            everything repeats for your benefit.
           </p>
-          <div><span>Move carefully -</span>some signals claw back.</div>
+          <div data-fade-in>
+            <span>Move carefully -</span>some signals claw back.
+          </div>
         </h3>
-        <h3 class="hero-text-right">
+        <h3 class="hero-text-right" data-fade-in>
           it’s not quiet here. You just haven’t tuned in yet
         </h3>
         <div class="hero-waves">
@@ -428,6 +430,11 @@
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         gsap.registerPlugin(Draggable, InertiaPlugin);
+        gsap.fromTo(
+          "[data-fade-in]",
+          { opacity: 0, y: "4rem" },
+          { opacity: 1, y: 0, ease: "ease.inOut", duration: 0.8, delay: 0.1 },
+        );
         const audios = gsap.utils.toArray("audio");
         const el = document.querySelector(".footer-wave");
         const fm = document.querySelector(".footer-station");
