@@ -20,6 +20,10 @@ html {
   width: 100vw;
 }
 
+[data-fade-in] {
+  opacity: 0;
+}
+
 @media (max-width: 600px) {
   html {
     font-size: calc(100vw / 404 * 10);
@@ -74,6 +78,9 @@ canvas {
     margin-top: auto;
     width: 34.5rem;
     white-space: pre;
+    font-size: 3.2rem;
+    line-height: normal;
+    letter-spacing: -0.32rem;
   }
 
   p {
