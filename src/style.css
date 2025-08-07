@@ -325,7 +325,7 @@ canvas {
 
 @media (max-width: 600px) {
   .footer {
-    bottom: 16rem;
+    bottom: 18rem;
     height: 8.2rem;
   }
 }
@@ -361,6 +361,7 @@ canvas {
 
   .footer-wave {
     gap: 0.4rem !important;
+    padding-top: 2.4rem !important;
   }
 
   span:nth-of-type(5n) {
